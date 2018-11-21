@@ -1,0 +1,15 @@
+{
+  "name": "mockgpio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && node index.js",
+    "start": "export NODE_ENV=develop || SET \"NODE_ENV=develop\" && node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "pigpio-mock": "0.0.1"
+  }
+}
