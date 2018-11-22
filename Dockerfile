@@ -1,9 +1,14 @@
 FROM hypriot/rpi-node:latest
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY package.json /usr/src/app/
+RUN sudo apt-get update && sudo apt-get install -y pigpio
+
+COPY package.json /app
 RUN npm install
-COPY . /user/src/app
 
-CMD ["npm", "start"]
+# 動態調整環境
+ARG DOCKER_ENV
+ENV NODE_ENV=${DOCKER_ENV}
+
+CMD ["npm", "run", "start"]
 
